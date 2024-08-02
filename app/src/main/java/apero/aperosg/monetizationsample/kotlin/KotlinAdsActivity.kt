@@ -64,6 +64,9 @@ class KotlinAdsActivity : AppCompatActivity() {
             adLayout = R.layout.native_ads,
             facebookAdLayout = null,
             keepAdsWhenLoading = true,
+            onMediationCallback = { mediationClassName ->
+
+            }
         )
     }
 
@@ -94,6 +97,22 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called when user close the ad
                     // Normally we don't do anything here because we already move screen in onNextAction
                 },
+                onAdShowed = { adId ->
+                    // This is called when interstitial starts to show
+                    // This can be deleted if you don't use it
+                },
+                onAdFailedToShow = {
+                    // This is called when interstitial failed to show
+                    // This override can be deleted if you don't use it
+                },
+                onAdImpression = { adId ->
+                    // This is called when ad is counted as impression
+                    // This can be deleted if you don't use it
+                },
+                onAdClicked = { adId ->
+                    // This is called when ad is clicked
+                    // This can be deleted if you don't use it
+                },
             )
         }
     }
@@ -112,7 +131,22 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called right after calling show ads regardless even if reward ad is shown or not
                     // Normally we don't do anything here
                 },
-
+                onAdShowed = { adId ->
+                    // This is called when interstitial starts to show
+                    // This can be deleted if you don't use it
+                },
+                onAdFailedToShow = {
+                    // This is called when interstitial failed to show
+                    // This override can be deleted if you don't use it
+                },
+                onAdImpression = { adId ->
+                    // This is called when ad is counted as impression
+                    // This can be deleted if you don't use it
+                },
+                onAdClicked = { adId ->
+                    // This is called when ad is clicked
+                    // This can be deleted if you don't use it
+                },
             )
         }
     }
@@ -130,6 +164,22 @@ class KotlinAdsActivity : AppCompatActivity() {
                 onUserEarnedReward = {
                     // This is called when user finished watch the ad
                     // You should move to next screen or give user reward here
+                },
+                onAdShowed = { adId ->
+                    // This is called when interstitial starts to show
+                    // This can be deleted if you don't use it
+                },
+                onAdFailedToShow = {
+                    // This is called when interstitial failed to show
+                    // This override can be deleted if you don't use it
+                },
+                onAdImpression = { adId ->
+                    // This is called when ad is counted as impression
+                    // This can be deleted if you don't use it
+                },
+                onAdClicked = { adId ->
+                    // This is called when ad is clicked
+                    // This can be deleted if you don't use it
                 },
             )
         }

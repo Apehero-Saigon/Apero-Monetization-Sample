@@ -3,11 +3,12 @@ package apero.aperosg.monetizationsample
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import apero.aperosg.monetizationsample.java.JavaAdsActivity
+import apero.aperosg.monetizationsample.java.JavaSplashActivity
 import apero.aperosg.monetizationsample.javafragment.JavaFragmentActivity
 import apero.aperosg.monetizationsample.kotlin.KotlinAdsActivity
+import apero.aperosg.monetizationsample.kotlin.KotlinSplashActivity
 import apero.aperosg.monetizationsample.kotlinfragment.KotlinFragmentActivity
 
 class MainActivity : AppCompatActivity() {
@@ -24,12 +25,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, KotlinFragmentActivity::class.java))
         }
 
+        findViewById<Button>(R.id.kotlinSplashBtn).setOnClickListener {
+            startActivity(Intent(this, KotlinSplashActivity::class.java))
+        }
+
         findViewById<Button>(R.id.javaBtn).setOnClickListener {
             startActivity(Intent(this, JavaAdsActivity::class.java))
         }
 
         findViewById<Button>(R.id.javaFragmentBtn).setOnClickListener {
             startActivity(Intent(this, JavaFragmentActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.javaSplashBtn).setOnClickListener {
+            startActivity(Intent(this, JavaSplashActivity::class.java))
         }
     }
 }

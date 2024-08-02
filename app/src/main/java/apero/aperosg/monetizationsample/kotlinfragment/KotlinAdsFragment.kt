@@ -38,6 +38,11 @@ class KotlinAdsFragment: Fragment() {
             adGroup = AdsProvider.native3Floors,
             frameLayout = binding.nativeFr,
             adLayout = R.layout.native_ads,
+            facebookAdLayout = null,
+            keepAdsWhenLoading = true,
+            onMediationCallback = { mediationClassName ->
+
+            }
         )
     }
 
@@ -49,6 +54,7 @@ class KotlinAdsFragment: Fragment() {
         showBannerAd(
             adGroup = AdsProvider.banner,
             frameLayout = binding.bannerFr,
+            keepAdsWhenLoading = true,
         )
     }
 

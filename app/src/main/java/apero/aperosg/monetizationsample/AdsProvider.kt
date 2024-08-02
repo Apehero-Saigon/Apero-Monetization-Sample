@@ -49,4 +49,15 @@ object AdsProvider {
         BuildConfig.banner_ad to "banner",
         name = "banner",
     )
+
+    val interSplash = InterstitialAdGroup(
+        BuildConfig.interstitial_ad to "inter_splash_high",
+        BuildConfig.interstitial_ad to "inter_splash",
+        name = "inter_splash",
+    )
+
+    val bannerSplash = BannerAdGroup(
+        BuildConfig.banner_ad to "banner_splash",
+        name = "banner_splash",
+    )
 }

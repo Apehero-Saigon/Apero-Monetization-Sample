@@ -76,6 +76,13 @@ public class JavaAdsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     *  Refer to documentation for full parameters of the function
+     *  Additional parameters:
+     *  - facebookAdLayout: layout to show for facebook meditation, null if only use normal layout id
+     *  - keepAdsWhenLoading: keep showing old ads when loading for new ads
+     *  - onMediationCallback: callback mediation adapter name of showing native
+     **/
     private void showNativeAds() {
         // Only call this function once in a screen,
         // This will create a coroutine job and react to native ad's status
@@ -114,7 +121,7 @@ public class JavaAdsActivity extends AppCompatActivity {
                         @Override
                         public void onAdClosed() {
                             super.onAdClosed();
-                            // This is called right after calling show ads regardless even if inter ad is shown or not
+                            // This is called when user close interstitial
                             // Normally we don't do anything here
                             // This override can be deleted if you don't use it
                         }
