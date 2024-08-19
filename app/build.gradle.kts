@@ -90,7 +90,7 @@ android {
 }
 
 dependencies {
-    implementation("apero.aperosg.monetization:monetization:1.0.9")
+    implementation("apero.aperosg.monetization:monetization:1.1.1")
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
