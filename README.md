@@ -26,7 +26,7 @@ maven {
 ### Add library to app module
 Inside app module's build.gradle, add implementation for library:
 ```
-implementation("apero.aperosg.monetization:monetization:1.1.3")
+implementation("apero.aperosg.monetization:monetization:1.1.4")
 ```
 
 # Table of Contents
