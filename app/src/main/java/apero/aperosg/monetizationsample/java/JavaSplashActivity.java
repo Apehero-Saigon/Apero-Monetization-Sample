@@ -6,13 +6,13 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.astronex.monetization.ads.java.InterstitialShowAdCallback;
+import com.astronex.monetization.ads.screenflow.SplashFlowUtilKt;
 import com.google.android.gms.ads.AdError;
 
-import apero.aperosg.monetization.adgroup.BannerAdGroup;
-import apero.aperosg.monetization.adgroup.InterstitialAdGroup;
-import apero.aperosg.monetization.java.InterstitialShowAdCallback;
-import apero.aperosg.monetization.screenflow.SplashFlowUtilKt;
-import apero.aperosg.monetization.util.AdsExtensionKt;
+import com.astronex.monetization.ads.adgroup.BannerAdGroup;
+import com.astronex.monetization.ads.adgroup.InterstitialAdGroup;
+import com.astronex.monetization.util.AdsExtensionKt;
 import apero.aperosg.monetizationsample.AdsProvider;
 import apero.aperosg.monetizationsample.databinding.ActivitySplashBinding;
 
@@ -38,7 +38,7 @@ public class JavaSplashActivity extends AppCompatActivity {
         bannerSplash.loadAds(this);
 
         // Show banner splash
-        AdsExtensionKt.showBannerAd(this, bannerSplash, binding.bannerFrame);
+        AdsExtensionKt.showBannerAd(this, bannerSplash, binding.bannerFrame, false, 15);
 
         // Register splash ads listener
         SplashFlowUtilKt.registerSplashAdsListener(
@@ -58,8 +58,8 @@ public class JavaSplashActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdShowed(String adId) {
-                        super.onAdShowed(adId);
+                    public void onAdShown(String adId, String adName) {
+                        super.onAdShown(adId, adName);
                         // This is called when interstitial starts to show
                         // This override can be deleted if you don't use it
                     }
@@ -72,16 +72,16 @@ public class JavaSplashActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdImpression(String adId) {
-                        super.onAdImpression(adId);
+                    public void onAdImpression(String adId, String adName) {
+                        super.onAdImpression(adId, adName);
                         // This is called when ad is counted as impression
                         // This can be deleted if you don't use it
                     }
 
                     // This can be deleted if you don't use it
                     @Override
-                    public void onAdClicked(String adId) {
-                        super.onAdClicked(adId);
+                    public void onAdClicked(String adId, String adName) {
+                        super.onAdClicked(adId, adName);
                         // This is called when ad is clicked
                         // This can be deleted if you don't use it
                     }

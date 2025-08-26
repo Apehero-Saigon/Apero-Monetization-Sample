@@ -26,7 +26,7 @@ maven {
 ### Add library to app module
 Inside app module's build.gradle, add implementation for library:
 ```
-implementation("apero.aperosg.monetization:monetization:1.1.8")
+implementation("apero.aperosg.astronex:monetization:1.0.1")
 ```
 
 # Table of Contents
@@ -86,6 +86,7 @@ In the example above, we have a native ad in Language screen which has 3 floors.
         BuildConfig.banner to "banner",
         // More floors if needed
         name = "banner_group",
+        onImpression = {adId, adName ->}, // Callback after ad is shown
         isCollapsible = false, // true if banner is collapsible, default is false, can delete this line if it's false
     )
     ```
@@ -98,6 +99,7 @@ In the example above, we have a native ad in Language screen which has 3 floors.
         onImpression = {}, // Additional callback when ad is shown if needed, delete this line not used
         onAdClick = {}, // Additional callback when ad is clicked if needed, delete this line not used
         isFullscreen = false, // true if ad is fullscreen native, default is false, can delete this line if it's false
+        reloadAfterVideo = true // true if you want to reload and show ad after ad shown video completely, default is true, can delete this line if it's true
     )
     ```
 - Interstitial
@@ -194,7 +196,7 @@ onAdClicked: *ad_name* *ad_id*
 // Print when ad failed to show (for inter, reward and app open only)
 onAdFailedToShow: *ad_name* *ad_id*
 // Print when ad showed (for inter, reward and app open only)
-onAdShowed: *ad_name* *ad_id*
+onAdShown: *ad_name* *ad_id*
 ```
 
 ## Advance topics

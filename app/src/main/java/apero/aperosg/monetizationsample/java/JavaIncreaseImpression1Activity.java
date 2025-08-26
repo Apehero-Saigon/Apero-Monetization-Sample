@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import apero.aperosg.monetizationsample.AdsProvider;
 import apero.aperosg.monetizationsample.App;
 
-import apero.aperosg.monetization.adgroup.InterstitialAdGroup;
-import apero.aperosg.monetization.adgroup.NativeAdGroup;
-import apero.aperosg.monetization.java.InterstitialShowAdCallback;
+import com.astronex.monetization.ads.adgroup.InterstitialAdGroup;
+import com.astronex.monetization.ads.adgroup.NativeAdGroup;
+import com.astronex.monetization.ads.java.InterstitialShowAdCallback;
+
 import apero.aperosg.monetizationsample.databinding.ActivityIncreaseImpression1Binding;
 
 /**

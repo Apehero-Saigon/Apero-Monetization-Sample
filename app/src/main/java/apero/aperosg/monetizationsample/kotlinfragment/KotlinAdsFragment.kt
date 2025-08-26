@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import apero.aperosg.monetization.util.showBannerAd
-import apero.aperosg.monetization.util.showNativeAd
+import com.astronex.monetization.util.showBannerAd
+import com.astronex.monetization.util.showNativeAd
 import apero.aperosg.monetizationsample.R
 import apero.aperosg.monetizationsample.databinding.FragmentAdsBinding
 import apero.aperosg.monetizationsample.AdsProvider
@@ -54,7 +54,8 @@ class KotlinAdsFragment: Fragment() {
         showBannerAd(
             adGroup = AdsProvider.banner,
             frameLayout = binding.bannerFr,
-            keepAdsWhenLoading = true,
+            fastReload = true,
+            fastReloadPeriod = 15,
         )
     }
 

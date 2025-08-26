@@ -1,6 +1,6 @@
 package apero.aperosg.monetizationsample.java;
 
-import static apero.aperosg.monetization.util.AdsExtensionKt.showNativeAd;
+import static com.astronex.monetization.util.AdsExtensionKt.showNativeAd;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import apero.aperosg.monetizationsample.AdsProvider;
 
-import apero.aperosg.monetization.adgroup.NativeAdGroup;
+import com.astronex.monetization.ads.adgroup.NativeAdGroup;
+
 import apero.aperosg.monetizationsample.R;
 import apero.aperosg.monetizationsample.databinding.ActivityNativeDupBinding;
 import kotlinx.coroutines.Job;
@@ -59,11 +60,14 @@ public class JavaNativeDupInplaceActivity extends AppCompatActivity {
         // Calling this multiple times may cause undefined behaviour
         // To show duplicate ad, we cancel previous coroutine job and start a new coroutine with duplicate ad
         if (nativeAdJob != null) nativeAdJob.cancel(null);
-        nativeAdJob = showNativeAd(
+        showNativeAd(
                 this,
                 nativeToShow,
                 binding.nativeFr,
-                R.layout.native_ads
+                R.layout.native_ads,
+                R.layout.native_ads,
+                true,
+                null
         );
     }
 

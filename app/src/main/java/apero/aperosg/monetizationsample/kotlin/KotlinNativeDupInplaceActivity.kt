@@ -3,7 +3,7 @@ package apero.aperosg.monetizationsample.kotlin
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import apero.aperosg.monetization.util.showNativeAd
+import com.astronex.monetization.util.showNativeAd
 import apero.aperosg.monetizationsample.R
 import apero.aperosg.monetizationsample.databinding.ActivityNativeDupBinding
 import apero.aperosg.monetizationsample.AdsProvider
@@ -44,12 +44,13 @@ class KotlinNativeDupInplaceActivity: AppCompatActivity() {
         // Calling this multiple times may cause undefined behaviour
         // To show duplicate ad, we cancel previous coroutine job and start a new coroutine with duplicate ad
         nativeAdJob?.cancel()
-        nativeAdJob = showNativeAd(
+        showNativeAd(
             adGroup = if (!isDupAds) AdsProvider.native3Floors else AdsProvider.nativeDup2Floors,
             frameLayout = binding.nativeFr,
             adLayout = R.layout.native_ads,
             facebookAdLayout = null,
             keepAdsWhenLoading = true,
+            onMediationCallback = null,
         )
     }
 

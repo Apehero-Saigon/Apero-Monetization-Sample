@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "apero.aperosg.monetizationsample"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "apero.aperosg.monetizationsample"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -90,7 +90,8 @@ android {
 }
 
 dependencies {
-    implementation("apero.aperosg.monetization:monetization:1.1.4")
+    implementation("apero.aperosg.astronex:monetization:1.0.1")
+    implementation(libs.material)
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")

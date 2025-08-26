@@ -1,10 +1,10 @@
 package apero.aperosg.monetizationsample
 
-import apero.aperosg.monetization.adgroup.BannerAdGroup
-import apero.aperosg.monetization.adgroup.InterstitialAdGroup
-import apero.aperosg.monetization.adgroup.NativeAdGroup
-import apero.aperosg.monetization.adgroup.RewardAdGroup
-import apero.aperosg.monetization.adunit.RewardAdUnit
+import com.astronex.monetization.ads.adgroup.BannerAdGroup
+import com.astronex.monetization.ads.adgroup.InterstitialAdGroup
+import com.astronex.monetization.ads.adgroup.NativeAdGroup
+import com.astronex.monetization.ads.adgroup.RewardAdGroup
+import com.astronex.monetization.ads.adunit.RewardAdUnit
 
 /**
  * Singleton class holding all ads objects

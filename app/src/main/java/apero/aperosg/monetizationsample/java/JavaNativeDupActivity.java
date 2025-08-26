@@ -6,8 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import apero.aperosg.monetization.adgroup.NativeAdGroup;
-import apero.aperosg.monetization.util.AdsExtensionKt;
+import com.astronex.monetization.ads.adgroup.NativeAdGroup;
+import com.astronex.monetization.util.AdsExtensionKt;
 import apero.aperosg.monetizationsample.R;
 import apero.aperosg.monetizationsample.databinding.ActivityNativeDupBinding;
 

@@ -1,16 +1,13 @@
 package apero.aperosg.monetizationsample
 
-import com.ads.control.admob.Admob
-import com.ads.control.ads.AperoAd
-import com.ads.control.application.AdsMultiDexApplication
-import com.ads.control.config.AdjustConfig
-import com.ads.control.config.AperoAdConfig
+import android.app.Application
+import com.astronex.monetization.AstronexMonetization
+import com.astronex.monetization.analytics.adjust.AstronexAdjustConfig
+import com.astronex.monetization.analytics.appsflyer.AstronexAppsFlyerConfig
 
-class App: AdsMultiDexApplication() {
+class App: Application() {
     companion object {
         lateinit var instance: App
-        private const val API_KEY =
-            "HjmuhANCbqoFeb+7zXSUd2qJYRvRd/fbhLgtZyRSfW6HtnfMDOGlay8afYz7S5lS1aT2fyd5l61Ugt4LQ66qeDZzu7DaAIiH45f7/M5xY+bBjSVQWGIF5UKhpCy6m3j2qYnzHfaXpZU6101LkbrbkTppU4DEaDbefn6Fk/DnVdY="
     }
 
     override fun onCreate() {
@@ -21,24 +18,22 @@ class App: AdsMultiDexApplication() {
     }
 
     private fun initAds() {
-        val environment = if (BuildConfig.DEBUG) {
-            AperoAdConfig.ENVIRONMENT_DEVELOP
-        } else {
-            AperoAdConfig.ENVIRONMENT_PRODUCTION
+        AstronexMonetization.init(
+            context = this,
+            testDeviceIds = listOf(
+                "List of test device ids"
+            ),
+            adjustConfig = AstronexAdjustConfig(
+                adjustToken = "Adjust token here",
+                adImpressionEvent = "Ad Impression Event Key here",
+                isSandbox = BuildConfig.DEBUG
+            ),
+            appsflyerConfig = AstronexAppsFlyerConfig(
+                apiKey = "Appsflyer key here",
+                isSandbox = BuildConfig.DEBUG
+            ),
+        ) {
+            // On complete
         }
-        aperoAdConfig = AperoAdConfig(this, API_KEY, AperoAdConfig.PROVIDER_ADMOB, environment)
-        aperoAdConfig.mediationProvider = AperoAdConfig.PROVIDER_ADMOB
-
-        val adjustConfig = AdjustConfig("")
-        adjustConfig.eventAdImpression = ""
-        aperoAdConfig.adjustConfig = adjustConfig
-
-        Admob.getInstance().setFan(false)
-        Admob.getInstance().setAppLovin(false)
-        Admob.getInstance().setColony(false)
-        Admob.getInstance().setOpenActivityAfterShowInterAds(true)
-        Admob.getInstance().setDisableAdResumeWhenClickAds(true)
-
-        AperoAd.getInstance().init(this, aperoAdConfig, false)
     }
 }

@@ -9,9 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import apero.aperosg.monetization.adgroup.BannerAdGroup;
-import apero.aperosg.monetization.adgroup.NativeAdGroup;
-import apero.aperosg.monetization.util.AdsExtensionKt;
+import com.astronex.monetization.ads.adgroup.BannerAdGroup;
+import com.astronex.monetization.ads.adgroup.NativeAdGroup;
+import com.astronex.monetization.util.AdsExtensionKt;
 import apero.aperosg.monetizationsample.R;
 import apero.aperosg.monetizationsample.databinding.FragmentAdsBinding;
 
@@ -57,7 +57,7 @@ public class JavaAdsFragment extends Fragment {
         // When another ad is ready, it will be shown automatically
         // Calling this multiple times may cause undefined behaviour
         AdsExtensionKt.showBannerAd(
-                this, banner, binding.bannerFr
+                this, banner, binding.bannerFr, false, 15
         );
     }
 

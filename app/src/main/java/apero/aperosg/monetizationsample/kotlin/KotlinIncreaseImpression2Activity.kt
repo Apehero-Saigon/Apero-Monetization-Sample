@@ -2,7 +2,7 @@ package apero.aperosg.monetizationsample.kotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import apero.aperosg.monetization.util.showNativeAd
+import com.astronex.monetization.util.showNativeAd
 import apero.aperosg.monetizationsample.R
 import apero.aperosg.monetizationsample.databinding.ActivityIncreaseImpression2Binding
 import apero.aperosg.monetizationsample.AdsProvider

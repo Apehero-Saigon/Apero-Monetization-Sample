@@ -3,10 +3,10 @@ package apero.aperosg.monetizationsample.kotlin
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import apero.aperosg.monetization.screenflow.registerSplashAdsListener
-import apero.aperosg.monetization.util.showBannerAd
+import com.astronex.monetization.util.showBannerAd
 import apero.aperosg.monetizationsample.AdsProvider
 import apero.aperosg.monetizationsample.databinding.ActivitySplashBinding
+import com.astronex.monetization.ads.screenflow.registerSplashAdsListener
 
 @SuppressLint("CustomSplashScreen")
 class KotlinSplashActivity : AppCompatActivity() {
@@ -26,7 +26,12 @@ class KotlinSplashActivity : AppCompatActivity() {
         AdsProvider.bannerSplash.loadAds(this)
 
         // Show banner splash
-        showBannerAd(AdsProvider.bannerSplash, binding.bannerFrame)
+        showBannerAd(
+            adGroup = AdsProvider.bannerSplash,
+            frameLayout = binding.bannerFrame,
+            fastReload = true,
+            fastReloadPeriod = 15,
+        )
 
         // Register splash ads listener
         this.registerSplashAdsListener(
@@ -46,11 +51,14 @@ class KotlinSplashActivity : AppCompatActivity() {
                 // This is called when interstitial failed to show
                 // This override can be deleted if you don't use it
             },
-            onAdImpression = {
+            onAdShown = { adId, adName ->
+
+            },
+            onAdImpression = { adId, adName ->
                 // This is called when ad is counted as impression
                 // This can be deleted if you don't use it
             },
-            onAdClicked = {
+            onAdClicked = { adId, adName ->
                 // This is called when ad is clicked
                 // This can be deleted if you don't use it
             }

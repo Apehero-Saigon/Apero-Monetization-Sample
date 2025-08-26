@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import apero.aperosg.monetization.util.showNativeAd
+import com.astronex.monetization.util.showNativeAd
 import apero.aperosg.monetizationsample.R
 import apero.aperosg.monetizationsample.databinding.ActivityNativeDupBinding
 import apero.aperosg.monetizationsample.AdsProvider

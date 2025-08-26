@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import apero.aperosg.monetization.util.showBannerAd
-import apero.aperosg.monetization.util.showNativeAd
+import com.astronex.monetization.util.showBannerAd
+import com.astronex.monetization.util.showNativeAd
 import apero.aperosg.monetizationsample.R
 import apero.aperosg.monetizationsample.databinding.ActivityAdsBinding
 import apero.aperosg.monetizationsample.AdsProvider
@@ -78,7 +78,8 @@ class KotlinAdsActivity : AppCompatActivity() {
         showBannerAd(
             adGroup = AdsProvider.banner,
             frameLayout = binding.bannerFr,
-            keepAdsWhenLoading = true,
+            fastReload = true,
+            fastReloadPeriod = 15,
         )
     }
 
@@ -97,7 +98,7 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called when user close the ad
                     // Normally we don't do anything here because we already move screen in onNextAction
                 },
-                onAdShowed = { adId ->
+                onAdShown = { adId, adName ->
                     // This is called when interstitial starts to show
                     // This can be deleted if you don't use it
                 },
@@ -105,11 +106,11 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called when interstitial failed to show
                     // This override can be deleted if you don't use it
                 },
-                onAdImpression = { adId ->
+                onAdImpression = { adId, adName ->
                     // This is called when ad is counted as impression
                     // This can be deleted if you don't use it
                 },
-                onAdClicked = { adId ->
+                onAdClicked = { adId, adName ->
                     // This is called when ad is clicked
                     // This can be deleted if you don't use it
                 },
@@ -131,7 +132,7 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called right after calling show ads regardless even if reward ad is shown or not
                     // Normally we don't do anything here
                 },
-                onAdShowed = { adId ->
+                onAdShown = { adId, adName ->
                     // This is called when interstitial starts to show
                     // This can be deleted if you don't use it
                 },
@@ -139,11 +140,11 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called when interstitial failed to show
                     // This override can be deleted if you don't use it
                 },
-                onAdImpression = { adId ->
+                onAdImpression = { adId, adName ->
                     // This is called when ad is counted as impression
                     // This can be deleted if you don't use it
                 },
-                onAdClicked = { adId ->
+                onAdClicked = { adIadId, adNamed ->
                     // This is called when ad is clicked
                     // This can be deleted if you don't use it
                 },
@@ -165,7 +166,7 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called when user finished watch the ad
                     // You should move to next screen or give user reward here
                 },
-                onAdShowed = { adId ->
+                onAdShown = { adId, adName ->
                     // This is called when interstitial starts to show
                     // This can be deleted if you don't use it
                 },
@@ -173,11 +174,11 @@ class KotlinAdsActivity : AppCompatActivity() {
                     // This is called when interstitial failed to show
                     // This override can be deleted if you don't use it
                 },
-                onAdImpression = { adId ->
+                onAdImpression = { adId, adName ->
                     // This is called when ad is counted as impression
                     // This can be deleted if you don't use it
                 },
-                onAdClicked = { adId ->
+                onAdClicked = { adId, adName ->
                     // This is called when ad is clicked
                     // This can be deleted if you don't use it
                 },
